@@ -8,7 +8,23 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup({})
+			require("mason-lspconfig").setup({
+        ensure_installed = {
+					"lua_ls",
+					"clangd",
+					"ts_ls",
+					"html",
+          "emmet_ls",
+					"cssls",
+					"css_variables",
+          "somesass_ls",
+					"pylsp",
+					-- "golangci_lint_ls",
+					"markdown_oxide",
+					"bashls",
+          "tailwindcss"
+				},
+      })
 		end,
 	},
 	{
@@ -35,16 +51,20 @@ return {
 			})
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
+        -- filetypes = {"css", "less"}
 			})
 			lspconfig.css_variables.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.somesass_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
-			--lspconfig.golangci_lint_ls.setup({
-			--	capabilities = capabilities,
-			--})
+			-- lspconfig.golangci_lint_ls.setup({
+			-- 	capabilities = capabilities,
+			-- })
 			lspconfig.markdown_oxide.setup({
 				capabilities = capabilities,
 			})

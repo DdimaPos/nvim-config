@@ -6,5 +6,3 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.api.nvim_set_option("clipboard","unnamedplus")
 vim.g.mapleader = " "
-
-
