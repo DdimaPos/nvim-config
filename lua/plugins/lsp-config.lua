@@ -22,6 +22,7 @@ return {
 					-- "golangci_lint_ls",
 					"markdown_oxide",
 					"bashls",
+					"texlab",
           "tailwindcss"
 				},
       })
@@ -72,6 +73,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.texlab.setup({
 				capabilities = capabilities,
 			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
