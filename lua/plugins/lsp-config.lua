@@ -33,64 +33,94 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-        filetypes = { "jsx", "tsx", "html", "css", "javascriptreact", "typescriptreact" },
-      })
-      lspconfig.asm_lsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities,
-        -- filetypes = {"css", "less"}
-      })
-      lspconfig.css_variables.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.somesass_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-      })
-      -- lspconfig.golangci_lint_ls.setup({
-      -- 	capabilities = capabilities,
-      -- })
-      lspconfig.markdown_oxide.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.bashls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.texlab.setup({
-        capabilities = capabilities,
-      })
+  --     local lspconfig = require("lspconfig")
+  --     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  --
+  --     -- A list of servers to setup.
+  --     -- This should be the same as your `ensure_installed` list in mason-lspconfig.
+  --     local servers = {
+  --       "lua_ls", "clangd", "ts_ls", "html", "emmet_ls", "eslint", "asm_lsp",
+  --       "cssls", "css_variables", "somesass_ls", "pylsp", "markdown_oxide",
+  --       "bashls", "texlab", "tailwindcss",
+  --     }
+  --
+  --     -- Loop through the servers and set them up.
+  --     for _, server in ipairs(servers) do
+  --       lspconfig[server].setup({
+  --         capabilities = capabilities,
+  --         -- You can add other default options here
+  --       })
+  --     end
+  --
+  --     -- Special setup for emmet_ls, which needs specific filetypes.
+  --     lspconfig.emmet_ls.setup({
+  --       capabilities = capabilities,
+  --       filetypes = { "html", "css", "jsx", "tsx", "javascriptreact", "typescriptreact" },
+  --     })
+  --
+  --     -- Keymaps
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
+  --   -- config = function()
+  --   -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  --   -- local lspconfig = require("lspconfig")
+  --   -- lspconfig.lua_ls.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.clangd.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.ts_ls.setup({
+  --   --   capabilities = capabilities,
+  --   --   root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+  --   -- })
+  --   -- lspconfig.html.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.emmet_ls.setup({
+  --   --   capabilities = capabilities,
+  --   --   filetypes = { "jsx", "tsx", "html", "css", "javascriptreact", "typescriptreact" },
+  --   -- })
+  --   -- lspconfig.asm_lsp.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.eslint.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.cssls.setup({
+  --   --   capabilities = capabilities,
+  --   --   -- filetypes = {"css", "less"}
+  --   -- })
+  --   -- lspconfig.css_variables.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.somesass_ls.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.pylsp.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- -- lspconfig.golangci_lint_ls.setup({
+  --   -- -- 	capabilities = capabilities,
+  --   -- -- })
+  --   -- lspconfig.markdown_oxide.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.bashls.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.tailwindcss.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- lspconfig.texlab.setup({
+  --   --   capabilities = capabilities,
+  --   -- })
+  --   -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+  --   -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+  --   -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+  --   -- end,
   },
   {
     "RRethy/vim-illuminate",

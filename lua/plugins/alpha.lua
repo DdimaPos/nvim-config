@@ -106,7 +106,7 @@ return {
         dashboard.button("no bind", "󰊄  Recently opened files", ":Telescope oldfiles <CR>"),
         dashboard.button("SPC f g", "󰈬  Find word", ":Telescope live_grep <CR>"),
         dashboard.button("<C-e>", "  Open file tree", ":Neotree toggle <CR>"),
-        dashboard.button("<C-h>", "  See bookmarks", ":Telescope harpoon marks <CR>"),
+        dashboard.button("<SPC hh>", "  See bookmarks", ":Telescope harpoon marks<CR>"),
         dashboard.button("q", "  Quit", ":qa<CR>"),
     },
 
