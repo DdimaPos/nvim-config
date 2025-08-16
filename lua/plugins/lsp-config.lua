@@ -21,11 +21,11 @@ return {
           "css_variables",
           "somesass_ls",
           "pylsp",
-          -- "golangci_lint_ls",
+          "golangci_lint_ls",
           "markdown_oxide",
           "bashls",
           "texlab",
-          "tailwindcss"
+          "tailwindcss",
         },
       })
     end,
@@ -40,5 +40,5 @@ return {
   },
   {
     "RRethy/vim-illuminate",
-  }
+  },
 }
