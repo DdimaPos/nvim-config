@@ -7,3 +7,5 @@ vim.cmd("set relativenumber")
 vim.cmd("set wrap")
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.g.mapleader = " "
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
