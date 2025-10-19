@@ -16,7 +16,6 @@ return {
           "html",
           "emmet_ls",
           "eslint",
-          "asm_lsp",
           "cssls",
           "css_variables",
           "somesass_ls",
