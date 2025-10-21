@@ -27,7 +27,7 @@ vim.diagnostic.config({
 --     vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
 --
 --     -- Optional: Link the border to the normal background for a seamless look
---     -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Float" })
+--     -- vim.api.nvim_set_hl(1, "FloatBorder", { link = "Float" })
 --   end,
 -- })
 
