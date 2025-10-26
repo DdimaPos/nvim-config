@@ -27,6 +27,21 @@ return {
 
     config = function()
       require("noice").setup({
+        cmdline = {
+          enabled = true,
+          view = "cmdline_popup"
+        },
+        routes = {
+          {
+            view = 'notify',
+            filter = {
+              event = 'msg_showmode',
+              any = {
+                { find = 'recording' },
+              },
+            },
+          },
+        },
         views = {
           cmdline_popup = {
             win_options = {
@@ -52,7 +67,17 @@ return {
           lsp_doc_border = false,       -- add a border to hover docs and signature help
         }
       })
+
+      local macro_group = vim.api.nvim_create_augroup('MacroRecording', { clear = true })
+      vim.api.nvim_create_autocmd('RecordingLeave', {
+        group = macro_group,
+        callback = function()
+          -- Display a message when macro recording stops
+          print('Macro recording stopped')
+        end,
+      })
     end,
+
     vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "Float" })
   }
 }
