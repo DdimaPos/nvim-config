@@ -24,6 +24,7 @@ return {
           "bashls",
           "texlab",
           "tailwindcss",
+          "jdtls"
         },
       })
     end,
@@ -37,28 +38,9 @@ return {
     end,
   },
   {
+    "mfussenegger/nvim-jdtls",
+  },
+  {
     "RRethy/vim-illuminate",
   },
-  -- {
-  --   "pmizio/typescript-tools.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  --   opts = {},
-  --   config = function()
-  --     require("typescript-tools").setup {
-  --       settings = {
-  --         separate_diagnostic_server = false,
-  --         tsserver_plugins = {
-  --           -- for TypeScript v4.9+
-  --           "@styled/typescript-styled-plugin",
-  --           -- or for older TypeScript versions
-  --           -- "typescript-styled-plugin",
-  --         },
-  --         jsx_close_tag = {
-  --           enable = false,
-  --           filetypes = { "javascriptreact", "typescriptreact" },
-  --         }
-  --       },
-  --     }
-  --   end
-  -- }
 }
