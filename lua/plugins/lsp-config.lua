@@ -24,7 +24,8 @@ return {
           "bashls",
           "texlab",
           "tailwindcss",
-          "jdtls"
+          "jdtls",
+          "arduino_language_server"
         },
       })
     end,
@@ -35,6 +36,18 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+
+      vim.lsp.config("arduino_language_server", {
+        cmd = {
+          "arduino-language-server",
+          "-cli-config", vim.fn.expand("~/Library/Arduino15/arduino-cli.yaml"),
+          "-fqbn", "arduino:avr:uno",
+        },
+        filetypes = { "arduino", "cpp" },
+      })
+
+      -- To actually start it for your files:
+      vim.lsp.enable("arduino_language_server")
     end,
   },
   {
