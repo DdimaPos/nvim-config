@@ -18,7 +18,7 @@ return {
   --     invert_selection = false,
   --     invert_signs = false,
   --     invert_tabline = false,
-  --     inverse = true, -- invert background for search, diffs, statuslines and errors
+  --     inverse = true,    -- invert background for search, diffs, statuslines and errors
   --     contrast = "hard", -- can be "hard", "soft" or empty string
   --     palette_overrides = {},
   --     overrides = {},
@@ -104,7 +104,7 @@ return {
   priority = 1000,
   opts = {
     transparent = true,
-    style = "night", -- optional, could be "storm", "night", "moon", etc.
+    style = "moon", -- optional, could be "storm", "night", "moon", etc.
     styles = {
       comments = { italic = true },
       keywords = { italic = true },
