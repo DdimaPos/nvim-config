@@ -11,6 +11,7 @@ return {
         typescriptreact = { "eslint_d", "prettier" },
         javascriptreact = { "eslint_d", "prettier" },
         css = { "prettier" },
+        scss = { "prettier" },
         html = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },

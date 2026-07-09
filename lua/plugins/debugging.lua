@@ -3,6 +3,7 @@ return {
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/nvim-nio",
+    "leoluz/nvim-dap-go",
     -- Optional: If you use Mason to manage adapters
     -- "jay-babu/mason-nvim-dap.nvim",
   },
@@ -40,9 +41,8 @@ return {
       -- Ensure node-debug2-adapter is installed (e.g., via Mason) and in your PATH
       command = 'node-debug2-adapter',
       name = 'node2' -- You can name this whatever you like, e.g., 'node'
-                     -- but ensure it matches the 'type' in configurations below
+      -- but ensure it matches the 'type' in configurations below
     }
-
 
     -- ===== Configurations =====
 
@@ -68,13 +68,15 @@ return {
           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
         cwd = '${workspaceFolder}',
-        stopOnEntry = true, -- Set to false if you don't want to stop at the entry point
+        stopOnEntry = true,    -- Set to false if you don't want to stop at the entry point
         args = {},
         runInTerminal = false, -- Set to true to run in an external terminal
       },
     }
     dap.configurations.asm = dap.configurations.c -- Reuse C config for Assembly
 
+    -- GOLANG
+    require("dap-go").setup()
 
     -- JavaScript / Node.js Configurations
     -- dap.configurations.javascript = {
@@ -182,8 +184,7 @@ return {
     vim.keymap.set("n", "<Leader>dl", function() dap.run_last() end, { desc = "DAP: Run Last" })
     vim.keymap.set("n", "<Leader>dd", function() dap.disconnect() end, { desc = "DAP: Disconnect" })
     vim.keymap.set("n", "<Leader>d?", function()
-        require('dapui').eval(nil, { enter = true })
+      require('dapui').eval(nil, { enter = true })
     end, { desc = "DAP: Evaluate Expression" })
-
   end,
 }

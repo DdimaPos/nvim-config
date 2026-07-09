@@ -16,7 +16,8 @@ return {
         "css",
         "java",
         "arduino",
-        "astro"
+        "astro",
+        "svelte"
       },
       highlight = {
         enable = true,
