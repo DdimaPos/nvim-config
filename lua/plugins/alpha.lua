@@ -101,24 +101,24 @@ return {
     --
 
     dashboard.section.buttons.val = {
-        dashboard.button("e", "  New file", "<cmd>ene <CR>"),
-        dashboard.button("<C-p>", "󰈞  Find file", ":Telescope find_files <CR>"),
-        dashboard.button("no bind", "󰊄  Recently opened files", ":Telescope oldfiles <CR>"),
-        dashboard.button("SPC f g", "󰈬  Find word", ":Telescope live_grep <CR>"),
-        dashboard.button("<C-e>", "  Open file tree", ":Neotree toggle <CR>"),
-        dashboard.button("<SPC hh>", "  See bookmarks", ":Telescope harpoon marks<CR>"),
-        dashboard.button("q", "  Quit", ":qa<CR>"),
-    },
+          dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+          dashboard.button("<C-p>", "󰈞  Find file", ":Telescope find_files <CR>"),
+          dashboard.button("no bind", "󰊄  Recently opened files", ":Telescope oldfiles <CR>"),
+          dashboard.button("SPC f g", "󰈬  Find word", ":Telescope live_grep <CR>"),
+          dashboard.button("<C-e>", "  Open file tree", ":Neotree toggle <CR>"),
+          dashboard.button("<SPC hh>", "  See bookmarks", ":Telescope harpoon marks<CR>"),
+          dashboard.button("q", "  Quit", ":qa<CR>"),
+        },
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "LazyVimStarted",
-      callback = function()
-        local stats = require("lazy").stats()
-        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        dashboard.section.footer.val = "Loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-        pcall(vim.cmd.AlphaRedraw)
-      end,
-    })
+        vim.api.nvim_create_autocmd("User", {
+          pattern = "LazyVimStarted",
+          callback = function()
+            local stats = require("lazy").stats()
+            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            dashboard.section.footer.val = "Loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+            pcall(vim.cmd.AlphaRedraw)
+          end,
+        })
     alpha.setup(dashboard.opts)
   end,
 }

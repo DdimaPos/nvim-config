@@ -5,6 +5,7 @@ return {
       require("notify").setup({
         timeout = 1500,               -- time in milliseconds (e.g., 2000ms = 2 seconds)
         stages = "fade_in_slide_out", -- optional: "fade", "slide", "fade_in_slide_out"
+        background_colour = "#000000",
       })
       vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "dismiss noice message" })
       vim.notify = require("notify") -- set it as the default notifier
