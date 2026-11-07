@@ -27,8 +27,10 @@ return {
         layout_config = {
           width = 0.95,
           height = 0.95,
-          preview_height = 0.6,
           prompt_position = "top",
+          -- preview_height is vertical-only; nesting it keeps it out of the shared
+          -- defaults, which "center" pickers (ui-select) validate against.
+          vertical = { preview_height = 0.6 },
         },
       })
 

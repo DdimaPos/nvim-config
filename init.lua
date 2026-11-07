@@ -1,3 +1,10 @@
+-- Cache vim.version(): on nvim 0.12 each call rebuilds api_info (~0.37 ms).
+-- Workaround for https://github.com/brenoprata10/nvim-highlight-colors/issues/181
+local cached_version = vim.version()
+getmetatable(vim.version).__call = function()
+  return setmetatable(vim.deepcopy(cached_version), getmetatable(cached_version))
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"

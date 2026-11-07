@@ -6,6 +6,7 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set nrformats+=alpha")
 vim.cmd("set wrap")
+vim.cmd("set mousescroll=ver:1,hor:1")
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

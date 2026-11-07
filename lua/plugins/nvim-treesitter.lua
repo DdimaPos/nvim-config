@@ -21,7 +21,8 @@ return {
       "arduino",
       "astro",
       "svelte",
-      "graphql"
+      "graphql",
+      "latex",
     })
 
     vim.api.nvim_create_autocmd("FileType", {

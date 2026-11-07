@@ -6,7 +6,7 @@ return {
       return
     end
     toggleterm.setup({
-      size = 70,
+      size = 15,
       open_mapping = [[<C-_>]],
       hide_numbers = true,
       shade_terminals = true,
@@ -14,7 +14,7 @@ return {
       start_in_insert = true,
       insert_mapping = true,
       persist_size = true,
-      direction = "vertical",
+      direction = "horizontal",
       close_on_exit = true,
       shell = vim.o.shell,
     })
@@ -27,6 +27,7 @@ return {
       vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
       vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
     end
+
     --
     -- Add an extra mapping for when Neovim calls it <C-/>
     vim.keymap.set({ "n", "t" }, "<C-/>", function()
