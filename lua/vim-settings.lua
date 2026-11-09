@@ -8,6 +8,8 @@ vim.cmd("set nrformats+=alpha")
 vim.cmd("set wrap")
 vim.cmd("set mousescroll=ver:1,hor:1")
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+-- Load project-local config from .nvim.lua in the startup directory (asks for trust first)
+vim.o.exrc = true
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

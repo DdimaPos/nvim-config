@@ -23,11 +23,13 @@ return {
         c = { "clang-format" },
         cpp = { "clang-format" },
       },
-      format_on_save = {
-        lsp_format = "fallback",
-        async = false,
-        timeout_ms = 2000,
-      },
+      format_on_save = function(bufnr)
+        -- Opt-out per buffer, e.g. from a project's .nvim.lua
+        if vim.b[bufnr].disable_autoformat then
+          return
+        end
+        return { lsp_format = "fallback", async = false, timeout_ms = 2000 }
+      end,
     })
     vim.keymap.set({ "n", "v" }, "<leader>gf", function()
       conform.format({
